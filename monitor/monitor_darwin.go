@@ -3,9 +3,8 @@
 package monitor
 
 import (
+	"github.com/fsnotify/fsevents"
 	"time"
-
-	"github.com/timeglass/snow/_vendor/github.com/go-fsnotify/fsevents"
 )
 
 type Monitor struct {
@@ -13,8 +12,8 @@ type Monitor struct {
 	*monitor
 }
 
-func new(dir string, sel Selector, latency time.Duration) (*Monitor, error) {
-	mon, err := newMonitor(dir, sel, latency)
+func new(directory string, sel Selector, latency time.Duration) (*Monitor, error) {
+	mon, err := newMonitor(directory, sel, latency)
 	if err != nil {
 		return nil, err
 	}

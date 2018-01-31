@@ -6,8 +6,8 @@ import (
 	"time"
 )
 
-var ErrAlreadyStarted = errors.New("The monitor is already running")
-var ErrAlreadyStopped = errors.New("The monitor is already not running")
+var ErrAlreadyStarted = errors.New("the monitor is already running")
+var ErrAlreadyStopped = errors.New("the monitor is already not running")
 
 //Selectors allows monitoring to occure on something else then
 //the complete subtree
@@ -43,7 +43,7 @@ type M interface {
 	Dir() string
 }
 
-func New(dir string, sel Selector, latency time.Duration) (M, error) {
+func New(directory string, sel Selector, latency time.Duration) (M, error) {
 	if sel == nil {
 		sel = Recursive
 	}
@@ -52,7 +52,7 @@ func New(dir string, sel Selector, latency time.Duration) (M, error) {
 		latency = time.Millisecond * 50
 	}
 
-	m, err := new(dir, sel, latency)
+	m, err := new(directory, sel, latency)
 	if err != nil {
 		return nil, err
 	}

@@ -20,7 +20,7 @@ var Latency = time.Millisecond * 20
 var Timeout = time.Second * 100
 var SettleTime = time.Millisecond * 40
 
-var errEventTimeout = errors.New("Timed out waiting for a monitor event or error")
+var errEventTimeout = errors.New("timed out waiting for a monitor event or error")
 
 type results struct {
 	evs  []DirEvent

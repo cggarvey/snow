@@ -35,7 +35,7 @@ In my opinion one has to simply accept the approach of FSEvent and use its "some
 
 In practice, this actually makes sense. It often up to the implementation to determine what event constitutes a file change anyway: 
 
-- did the file content actually change or just the timestampe? 
+- did the file content actually change or just the timestamp?
 - what do renames actually mean, is it another file or was it moved?
 - when files are moved outside the monitored directory, should those be considered as removals?
 - what about atomic saves that some IDE's use, are those truly two events or do you want to handle them as a file modification?
